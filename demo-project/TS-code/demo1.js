@@ -1,0 +1,11 @@
+let uname = 'hello ';
+let age = 20;
+let flag = false;
+let hobby = null;
+let me = undefined;
+let lixiong = 10;
+lixiong = 'my name';
+let numbers = [10, 11, 22, 33, 44, 55.7];
+let yournames = ['li', 'xiong', 'brues', "hansome"];
+console.log(`uname : ${uname} ,age : ${age}, flag: ${flag} , hobby : ${hobby}, me : ${me} , lixiong : ${lixiong}`);
+console.log(`numbwes: ${numbers} , yournames: ${yournames}`);
