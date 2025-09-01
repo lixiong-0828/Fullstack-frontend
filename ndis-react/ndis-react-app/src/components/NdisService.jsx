@@ -5,10 +5,10 @@ import api from "../services/api"
 
 const NdisService = () =>{
 
-    const[serviceType,setServiceType] = useState('')
-    const[provider,setProvider] = useState('')
+    const[serviceTypeId,setServiceTypeId] = useState('')
+    const[userId,setUserId] = useState('')
     const[serviceName,setServiceName] = useState('')
-    const[description,setDescription] = useState('') 
+    const[serviceDescription,setServiceDescription] = useState('') 
     const[price,setPrice] = useState('') 
     const[error,setError] = useState(null)
 
@@ -19,11 +19,11 @@ const NdisService = () =>{
         setError(null)
         debugger
         try{
-            const response = await api.post('/ndis_service',{
-                serviceType,
-                provider,
+            const response = await api.post('/api/ndis-service',{
+                serviceTypeId,
+                userId,
                 serviceName,
-                description,
+                serviceDescription,
                 price
             })
 
@@ -48,19 +48,19 @@ const NdisService = () =>{
                 <form className="space-y-4" onSubmit={handleSubmit}>
                     <div className="mb-4">
                         
-                        <label htmlFor="serviceType" className="block text-gray-700 mb-1">serviceType </label>
-                        <input type="serviceType" placeholder="input serviceType" value={serviceType} 
-                        className = "w-full border rounded px-3 py-2 focus:online-none focus:ring focus:border-blue-300" onChange={(e)=>setServiceType(e.target.value)} required/>
-                        <label htmlFor="provider" className="block text-gray-700 mb-1">provider </label>
-                        <input type="provider" placeholder="input provider" value={provider} 
-                        className = "w-full border rounded px-3 py-2 focus:online-none focus:ring focus:border-blue-300" onChange={(e)=>setProvider(e.target.value)} required/>
+                        <label htmlFor="serviceTypeId" className="block text-gray-700 mb-1">serviceTypeId </label>
+                        <input type="serviceTypeId" placeholder="input serviceTypeId" value={serviceTypeId} 
+                        className = "w-full border rounded px-3 py-2 focus:online-none focus:ring focus:border-blue-300" onChange={(e)=>setServiceTypeId(e.target.value)} required/>
+                        <label htmlFor="userId" className="block text-gray-700 mb-1">userId </label>
+                        <input type="userId" placeholder="input userId" value={userId} 
+                        className = "w-full border rounded px-3 py-2 focus:online-none focus:ring focus:border-blue-300" onChange={(e)=>setUserId(e.target.value)} required/>
 
                         <label htmlFor="serviceName" className="block text-gray-700 mb-1">serviceName </label>
                         <input type="serviceName" placeholder="input serviceName" value={serviceName} 
                         className = "w-full border rounded px-3 py-2 focus:online-none focus:ring focus:border-blue-300" onChange={(e)=>setServiceName(e.target.value)} required/>
-                        <label htmlFor="description" className="block text-gray-700 mb-1">description </label>
-                        <input type="description" placeholder="input description" value={description} 
-                        className = "w-full border rounded px-3 py-2 focus:online-none focus:ring focus:border-blue-300" onChange={(e)=>setDescription(e.target.value)} required/>
+                        <label htmlFor="serviceDescription" className="block text-gray-700 mb-1">serviceDescription </label>
+                        <input type="serviceDescription" placeholder="input serviceDescription" value={serviceDescription} 
+                        className = "w-full border rounded px-3 py-2 focus:online-none focus:ring focus:border-blue-300" onChange={(e)=>setServiceDescription(e.target.value)} required/>
                         <label htmlFor="price" className="block text-gray-700 mb-1">price </label>
                         <input type="price" placeholder="input price" value={price} 
                         className = "w-full border rounded px-3 py-2 focus:online-none focus:ring focus:border-blue-300" onChange={(e)=>setPrice(e.target.value)} required/>
