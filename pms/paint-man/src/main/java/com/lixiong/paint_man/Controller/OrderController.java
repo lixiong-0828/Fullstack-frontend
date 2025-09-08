@@ -34,25 +34,25 @@ public class OrderController {
         return orders;
     }
 
-    // @PostMapping("createOrders")
-    // public Result createOrders(@RequestParam Long userId) {
-    //     //TODO: process POST request
-
-    //     Orders orders = orderService.creatOrders(userId);
-        
-    //     return Result.success(orders);
-    //     }
-
     @PostMapping("createOrders")
-    public ResponseEntity<Orders> createOrders(@RequestParam Long userId) {
+    public Result createOrders(@RequestParam Long userId) {
         //TODO: process POST request
 
         Orders orders = orderService.creatOrders(userId);
-
-        log.info("orders :========= {}" ,orders.getOrderStatus());
         
-        return ResponseEntity.ok(orders);
+        return Result.success(orders);
         }
+
+    // @PostMapping("createOrders")
+    // public ResponseEntity<Orders> createOrders(@RequestParam Long userId) {
+    //     //TODO: process POST request
+
+    //     Orders orders = orderService.creatOrders(userId);
+
+    //     log.info("orders :========= {}" ,orders.getOrderStatus());
+        
+    //     return ResponseEntity.ok(orders);
+    //     }
     
 
 
